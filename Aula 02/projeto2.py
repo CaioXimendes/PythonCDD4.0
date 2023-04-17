@@ -1,0 +1,7 @@
+print("Bem vindo a Calculadora de 4 operações: \n")
+num_1= float(input("Olá, Informe o número 01: \n"))
+num_2= float(input("Agora informe o número 02: \n"))
+print("Para a soma o resultado é: ",(num_1+num_2))
+print("Para a subtração o resultado é: ",(num_1-num_2))
+print("Para a multiplicação o resultado é: ",(num_1*num_2))
+print("Para a Divisão o resultado é: ",(num_1/num_2))
