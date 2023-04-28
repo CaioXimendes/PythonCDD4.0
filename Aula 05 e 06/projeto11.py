@@ -18,10 +18,10 @@ menor = vetor_A[0]
 for n in range(5):
     if vetor_A[n] > maior:
         maior = vetor_A[n]
-        print(f"maior valor do vetor é:{maior}")
-    if vetor_A[n] > menor:
+    if vetor_A[n] < menor:
         menor = vetor_A[n]
-        print(f"menor valor do vetor é:{menor}")
+print(f"maior valor do vetor é:{maior}")
+print(f"menor valor do vetor é:{menor}")
 print("")
 #(3) questao
 for y in range(5):
