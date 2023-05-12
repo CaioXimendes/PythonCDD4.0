@@ -39,4 +39,4 @@ while '_' in lista_2:
 if '_' not in lista_2:
     print(f"parabéns! você acertou a palavra: {palavra_recebe}")
 else:
-    print("Você perdeu, tente a próxima!")
+    print(f"Você perdeu, a palavra correta era {palavra_recebe} tente a próxima!")
