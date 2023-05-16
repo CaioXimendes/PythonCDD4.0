@@ -15,8 +15,6 @@ print("="*56)
 for x in palavra_recebida:
     vetor_aux2.append(x)
 
-
-
 while '_' in vetor_aux:
     acertou = False
     print(vetor_aux)
