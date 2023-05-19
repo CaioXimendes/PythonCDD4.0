@@ -40,3 +40,13 @@ def criar_nova_lista(a):
         if x not in nova_lista:
             nova_lista.append(x)
     print(nova_lista)
+def numeroprimo2(n):
+    if n == 1:
+        return n, print("Não é primo")
+    elif n == 2:
+        return n, print("É primo")
+    for x in range(2,n):
+        if n % x == 0:
+            return n, print("Não é primo")
+        else:
+            return n, print("É primo")

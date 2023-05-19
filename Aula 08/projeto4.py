@@ -7,3 +7,5 @@ print(f"O produto: {nome} custou: {valor}")
 
 # () são tuplas, colocando virgula no return, ele retornará uma tupla, as tuplas funcionam como as listas, porém são
 #como constantes, não se alteram durante a execução do código
+
+
