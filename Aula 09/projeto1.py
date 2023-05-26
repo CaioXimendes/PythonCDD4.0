@@ -1,24 +1,39 @@
 class ContaBancaria:
-    def __init__ (self,num_conta,saldo, nome_cliente, tipo_conta, status = False):
+    def __init__ (self,num_conta,saldo, nome_cliente, tipo_conta, limite,status = False):
         self.num_conta = num_conta
         self.saldo = saldo
         self.nome_cliente = nome_cliente
         self.tipo_conta = tipo_conta
+        self.limite = limite
         self.status = status
+    def ativarlimite(self):
+        if self.status == True:
+            if self.limite == 0:
+                print("Seu limite agora está ativado!")
+            else:
+                print("Você não pode ativar o limite não estando zerado!")
+        else:
+            print("Não é possível ativar o limite de uma conta desativada!")
+    def desativarlimite(self):
+        if self.status == True:
+            if self.limite != 0:
+                print("Não é possivel desativar um limite diferente de 0")
+            else:
+                print("Seu limite agora está desativado!")
+                self.limite = 0
+        else:
+            print("Não é possível desativar o limite de uma conta desativada!")
+
     def depositar(self,deposito):
         if self.status == True:
             self.saldo += deposito
         else:
             print("Você não pode depositar em uma conta inativa!")
     def sacar(self,saque):
-        if self.status == True:
-            if saque > self.saldo:
-                print("Você não pode sacar uma quantia maior que o saldo!")
-            else:
-                self.saldo -= saque
-                print(f"Você sacou {saque} R$ da sua conta!")
-        else:
-            print("Você não pode sacar em uma conta inativa!")
+        if saque > self.saldo:
+            novo_saldo = (saque - self.saldo) - (saque - self.limite)
+            self.saldo = novo_saldo
+            print(f"você sacou R$ {saque}")
     def verificarsaldo (self):
         if self.status == True:
             print(f"Seu saldo atual é de: R${self.saldo}")
@@ -39,7 +54,11 @@ class ContaBancaria:
         else:
             print("Não é possível desativar uma conta que já está desativada!")
 
-conta1 = ContaBancaria(123456789,0,"caio","corrente",True)
+conta1 = ContaBancaria(123456789,800,"caio","corrente",1000,False)
 
-conta1.desativarconta()
 print(conta1.tipo_conta)
+conta1.ativarconta()
+conta1.ativarlimite()
+conta1.verificarsaldo()
+conta1.sacar(1000)
+conta1.verificarsaldo()
