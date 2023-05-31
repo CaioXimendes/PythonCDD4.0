@@ -6,44 +6,36 @@
 # Verifique se os dois são mesmo instancias de Forma (use instanceof), e calcule a área de cada um.
 
 class Forma:
-    def __init__(self,area,perimetro):
-        self.area = area
-        self.perimetro = perimetro
+    def __init__(self):
+        self.area = 0
+        self.perimetro = 0
 
 class Retangulo(Forma):
-    def __init__(self, base, altura, area, perimetro):
-        super().__init__(area, perimetro)
-        self.base = base
-        self.altura = altura
-    def CalculaArea(self):
-        self.area = self.base * self.altura
-        return self.area
-    def CalculaPerimetro(self):
-        self.perimetro = 2*(self.base + self.altura)
-        return self.perimetro
+    def __init__(self):
+        super().__init__()
+    def CalculaArea(self,base,altura):
+        self.area = base * altura
+        print(f"A área do retângulo é: {self.area}")
+    def CalculaPerimetro(self,base,altura):
+        self.perimetro = 2*(base + altura)
+        print(f"O perímetro do retângulo é: {self.perimetro}")
 class Triangulo(Forma):
-    def __init__(self, base, altura, lado1, lado2, lado3, area, perimetro):
-        super().__init__(area, perimetro)
-        self.base = base
-        self.altura = altura
-        self.lado1 = lado1
-        self.lado2 = lado2
-        self.lado3 = lado3
-    def CalculaArea(self):
-        self.area = (self.base * self.altura)/2
-        return self.area
-    def CalculaPerimetro(self):
-        self.perimetro = self.lado1 + self.lado2 + self.lado3
-        return self.perimetro
+    def __init__(self):
+        super().__init__()
+    def CalculaArea(self,base,altura):
+        self.area = (base * altura)/2
+        print(f"A área do triângulo é: {self.area}")
+    def CalculaPerimetro(self,lado1,lado2,lado3):
+        self.perimetro = lado1 + lado2 + lado3
+        print(f"O perimetro do triangulo é: {self.perimetro}")
 
-retangulo1 = Retangulo(2, 5, 0, 0)
+retangulo1 = Retangulo()
+triangulo1 = Triangulo()
 
-if isinstance(retangulo1, Retangulo): #verifica se o objeto retangulo1 está estanciado na classe Retangulo
-    print(retangulo1.CalculaArea())
-    print(retangulo1.CalculaPerimetro())
+if isinstance(retangulo1,Retangulo):
+    retangulo1.CalculaArea(2,5)
+    retangulo1.CalculaPerimetro(2,5)
 
-triangulo1 = Triangulo(2, 5, 1, 2, 3, 0, 0)
-
-if isinstance(triangulo1, Triangulo): #verifica se o objeto triangulo1 está estanciado na classe Triangulo
-    print(triangulo1.CalculaArea())
-    print(triangulo1.CalculaPerimetro())
+if isinstance(triangulo1,Triangulo):
+    triangulo1.CalculaArea(2,5)
+    triangulo1.CalculaPerimetro(2,2,2)
