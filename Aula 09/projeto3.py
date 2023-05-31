@@ -12,6 +12,10 @@ class Ingresso:
         print(f"O valor do ingresso é: R$ {self.valor}")
 class IngressoVip(Ingresso):
     def __init__(self,valor):
-        super.__init__(self,valor)
-    def RetornarValorVip(self):
-        return self.valor*1.3 # aumento de 30%
+        super().__init__(valor)
+    def ImprimeValor(self,percentual):
+        print(f"O valor do ingresso VIP é: R$ {self.valor+(self.valor*percentual/100)}")
+
+ingressovip = IngressoVip(200)
+
+ingressovip.ImprimeValor(100)
