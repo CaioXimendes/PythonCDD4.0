@@ -1,0 +1,43 @@
+BANCO DE DADOS ACADEMIA
+
+ENTIDADES:
+
+ALUNO
+Atributos: 
+
+nome_aluno,
+idade_aluno,
+data_nasc_aluno,
+idade_aluno,
+altura_aluno,
+peso_aluno,
+telefone_aluno,
+cpf_aluno,
+endereço_aluno,
+matricula_aluno
+modalidade_aluno
+mensalidade_aluno
+
+MODALIDADE
+
+id_modalidade
+nome
+valor
+
+
+PROFESSOR
+Atributos: 
+nome_prof, 
+idade_prof, 
+data_nasc_prof, 
+cpf_prof, 
+endereço_prof,
+telefone_prof,
+habilitacao_prof
+
+CHAVES PRIMARIAS = (pk)
+
+CHAVE ESTRANGEIRA = 
+
+
+
